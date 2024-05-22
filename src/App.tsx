@@ -5,7 +5,6 @@ import HomePage from './pages/HomePage/HomePage';
 import AddPage from './pages/AddPage/AddPage';
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { citiesDummy } from './cities.json';
 import { ICity } from './models/ICity';
 import axios from 'axios';
 
@@ -14,11 +13,11 @@ function App() {
   const [activeCity, setActiveCity] = useState<ICity>({} as ICity);
 
   useEffect(() => {
-    axios.get('data/data.json')
+    axios.get('data/cities.json')
          .then(response => {
                console.log('RESPONSE::::', response.data)
-               setCities(response.data.cities)
-               setActiveCity(response.data.cities[0])
+               setCities(response.data.citiesDummy)
+               setActiveCity(response.data.citiesDummy[0])
           }
     );
   }, []);
