@@ -15,7 +15,6 @@ function App() {
   useEffect(() => {
     axios.get('data/cities.json')
          .then(response => {
-               console.log('RESPONSE::::', response.data)
                setCities(response.data.citiesDummy)
                setActiveCity(response.data.citiesDummy[0])
           }
