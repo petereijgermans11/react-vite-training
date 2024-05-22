@@ -4,24 +4,13 @@ import HeaderComponent from './components/HeaderComponent/HeaderComponent';
 import HomePage from './pages/HomePage/HomePage';
 import AddPage from './pages/AddPage/AddPage';
 import { Routes, Route } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { citiesDummy } from './cities.json';
 import { ICity } from './models/ICity';
-import axios from 'axios';
 
 function App() {
-  const [cities, setCities] = useState<ICity[]>([]);
+  const [cities, setCities] = useState<ICity[]>(citiesDummy);
   const [activeCity, setActiveCity] = useState<ICity>({} as ICity);
-
-  useEffect(() => {
-    axios.get('data/data.json')
-         .then(response => {
-               console.log('RESPONSE::::', response.data)
-               setCities(response.data.cities)
-               setActiveCity(response.data.cities[0])
-          }
-    );
-  }, []);
 
   return (
     <>
