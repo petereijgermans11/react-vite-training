@@ -5,7 +5,6 @@ import HomePage from './pages/HomePage/HomePage';
 import AddPage from './pages/AddPage/AddPage';
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { citiesDummy } from './cities.json';
 import { ICity } from './models/ICity';
 import axios from 'axios';
 
